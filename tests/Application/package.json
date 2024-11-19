@@ -3,11 +3,19 @@
   "scripts": {
     "build": "encore dev",
     "build:prod": "encore production",
-    "postinstall": "semantic-ui-css-patch",
-    "lint": "yarn lint:js",
-    "watch": "encore dev --watch"
+    "watch": "encore dev --watch",
+    "postinstall": "cd ./node_modules/@symfony/ux-autocomplete && npm install && cd - && cd ./node_modules/@symfony/ux-live-component && npm install && cd -"
+  },
+  "dependencies": {
+    "@sylius-ui/admin": "git+https://github.com/Sylius/SyliusAdminBundle.git#2.0",
+    "@sylius-ui/shop": "git+https://github.com/Sylius/SyliusShopBundle.git#2.0",
+    "@symfony/ux-autocomplete": "file:../../vendor/symfony/ux-autocomplete/assets",
+    "@symfony/ux-live-component": "file:../../vendor/symfony/ux-live-component/assets"
   },
   "devDependencies": {
-    "@sylius-ui/frontend": "^1.0"
+    "@hotwired/stimulus": "^3.0.0",
+    "@symfony/stimulus-bridge": "^3.2.0",
+    "@symfony/webpack-encore": "^5.0.1",
+    "tom-select": "^2.2.2"
   }
 }
