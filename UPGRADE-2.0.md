@@ -19,3 +19,5 @@
                 sample_resource:
                     ...
     ```
+
+2. `_javascript.html.twig` file has been removed, and its code has been moved to `src/Resources/assets/js/refund-button.js`. When upgrading to 2.0, import the `src/Resources/assets/entrypoint.js` file into your application’s main js file.
